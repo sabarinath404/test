@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation with Red Error Messages</title>
+    <script src="validation.js" defer></script> <!-- Link to the JS file -->
+    <style>
+        .error {
+            color: red;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Form Validation with Red Error Messages</h2>
+    <form id="myForm" onsubmit="return validateForm()">
+
+        <!-- Name Field -->
+        <label for="name">Name:</label><br>
+        <input type="text" id="name" name="name" onblur="validateName()"><br>
+        <span id="nameError"  class="error"></span><br>
+
+        <!-- Email Field -->
+        <label for="email">Email:</label><br>
+        <input type="text" id="email" name="email" onblur="validateEmail()"><br>
+        <span id="emailError" class="error"></span><br>
+
+        <!-- Password Field -->
+        <label for="password">Password:</label><br>
+        <input type="password" id="password" name="password" onblur="validatePassword()"><br>
+        <span id="passwordError" class="error"></span><br>
+
+        <label for="confirmPassword">Confirm Password:</label>
+        <input type="password" id="confirmPassword" name="confirmPassword" onblur="validateConfirmPassword()"><br>
+        <span id="confirmPasswordError" class="error"></span><br>
+
+        <!-- Gender Radio Buttons -->
+        <label>Gender:</label><br>
+        <input type="radio" id="male" name="gender" value="male" onclick="validateGender()"> Male<br>
+        <input type="radio" id="female" name="gender" value="female" onclick="validateGender()"> Female<br>
+        <span id="genderError" class="error"></span><br>
+
+        <!-- Checkbox for agreeing to terms -->
+        <input type="checkbox" id="terms" name="terms" onclick="validateTerms()">
+        <label for="terms"> I agree to the terms and conditions</label><br>
+        <span id="termsError" class="error"></span><br><br>
+
+        <!-- Submit Button -->
+        <input type="submit" value="Submit">
+
+    </form>
+
+</body>
+</html>
